@@ -75,7 +75,10 @@ docker container run -d -P<image-id>
 ```
 
 
-### run docker volume create (/var/lib/docker/volumes/devvolume/_data)
+### run docker volume create
+
+```docker container inspect <containerid> ``` will show the mounteed volume information
+
 
 ```
 docker volume crete <volume name>
