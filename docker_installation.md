@@ -12,3 +12,6 @@ Environment="HTTP_PROXY=http://proxy.example.com:80/"
 Environment="HTTP_PROXYS=http://proxy.example.com:80/" 
 Environment="NO_PROXY=localhost,127.0.0.0/8,docker-registry.somecorporation.com"
 ```
+Flush changes
+``` sudo systemctl daemon-reload ```
+``` sudo systemctl restart docker ```
