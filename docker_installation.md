@@ -56,6 +56,6 @@ RUN apt-get install -y python3
 ### run command line in docker container
 
 ```
-docker container run -it --name python-container 736d8b3bc58c
+docker container run -it --name <container-name> <image-id>
 
 ```
