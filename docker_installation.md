@@ -52,3 +52,10 @@ RUN echo https proxy: ${https_proxy} ${HTTPS_PROXY}
 RUN apt-get update
 RUN apt-get install -y python3
 ```
+
+### run command line in docker container
+
+```
+docker container run -it --name python-container 736d8b3bc58c
+
+```
