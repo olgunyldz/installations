@@ -43,8 +43,12 @@ Create/edit ~/.docker/config.json
 ### add proxy settings to docker file
 
 ```
-# Debug
+FROM ubuntu:16.04
+LABEL maintainer="olgun.yldz@gmail.com"
+
 RUN echo http proxy: ${http_proxy} ${HTTP_PROXY}
 RUN echo https proxy: ${https_proxy} ${HTTPS_PROXY}
 
+RUN apt-get update
+RUN apt-get install -y python3
 ```
