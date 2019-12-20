@@ -59,3 +59,17 @@ RUN apt-get install -y python3
 docker container run -it --name <container-name> <image-id>
 
 ```
+
+### run docker container with predefined port expose
+
+```
+docker container run -d -p 80:80 <image-id>
+
+```
+
+### run docker container with random port expose
+
+```
+docker container run -d -P<image-id>
+
+```
