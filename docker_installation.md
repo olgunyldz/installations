@@ -73,3 +73,27 @@ docker container run -d -p 80:80 <image-id>
 docker container run -d -P<image-id>
 
 ```
+
+
+### run docker volume create (/var/lib/docker/volumes/devvolume/_data)
+
+```
+docker volume crete <volume name>
+
+```
+
+### run docker volume attach 
+
+```
+docker container run -d --name <containername> --mount source=<source volume name>,target=<destinattifolder name> nginx
+
+docker container run -d --name <containername> -v <source volume name>:<destinattifolder name> nginx
+
+```
+
+### run sh command in container
+
+```
+docker container exec -it <container name> sh
+
+```
