@@ -71,3 +71,39 @@ docker container logs [NAME]
 docker service logs [SERVICE]
 ```
 
+### List all Docker networks on the host:
+
+```
+docker network ls
+docker network ls --no-trunc
+```
+
+### Getting detailed info on a network:
+
+```
+docker network inspect [NAME]
+```
+
+### Creating a network
+
+```
+docker network create <network name>
+```
+
+### Deleting a network:
+
+```
+docker network rm [NAME]
+```
+
+### Connecting container with a network
+
+```
+docker network connect <network name> <containern ame>
+```
+
+### Disconnecting container with a network
+
+```
+docker network disconnect <network name> <containern ame>
+```
