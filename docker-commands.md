@@ -1,4 +1,4 @@
-# Container commands
+# Container In Docker
 
 ### docker container run:
 
@@ -71,6 +71,8 @@ docker container logs [NAME]
 docker service logs [SERVICE]
 ```
 
+## Network in Docker
+
 ### List all Docker networks on the host:
 
 ```
@@ -107,3 +109,16 @@ docker network connect <network name> <containern ame>
 ```
 docker network disconnect <network name> <containern ame>
 ```
+
+### Create a bridge network with a subnet and gateway:
+
+```
+docker network create --subnet 10.1.0.0/24 --gateway 10.1.0.1 <network name>
+```
+
+### Create a network with an IP range:
+
+```
+docker network create --subnet 10.1.0.0/16 --gateway 10.1.0.1 --ip-range=10.1.4.0/24 --driver=bridge --label=host4network <network name>
+```
+
