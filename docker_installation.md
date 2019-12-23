@@ -52,6 +52,7 @@ sub   4096R/F273FCD8 2017-02-22
 
 For best practices, do not use *root*. Instead, add your user to the Docker group. For this example, our user's is named *osboxes*: 
 ```
+osboxes@osboxes:~$ sudo groupadd docker
 osboxes@osboxes:~$ sudo usermod -a -G docker $USER
 [sudo] password for osboxes:
 osboxes@osboxes:~$ 
