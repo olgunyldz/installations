@@ -58,3 +58,16 @@ docker container run -P
 ```
 docker container port [Container_NAME]
 ```
+
+### Show information logged by a running container:
+
+```
+docker container logs [NAME]
+```
+
+### Show information logged by all containers participating in a service:
+
+```
+docker service logs [SERVICE]
+```
+
