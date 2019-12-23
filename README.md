@@ -1,7 +1,7 @@
 [Docker Installation](https://github.com/olgunyldz/installations/blob/master/docker_installation.md)
 
 # Creating  an Apt Proxy Conf File
-## Apt loads all configuration files under /etc/apt/apt.conf.d. We can create a configuration specifically for our proxy there, keeping it separate from all other configurations.
+ Apt loads all configuration files under /etc/apt/apt.conf.d. We can create a configuration specifically for our proxy there, keeping it separate from all other configurations.
 
 ### Create a new configuration file named proxy.conf.
 
