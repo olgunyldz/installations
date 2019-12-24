@@ -92,6 +92,12 @@ docker network inspect [NAME]
 docker network create <network name>
 ```
 
+### Creating a internal network
+
+```
+docker network create <network name> --internal
+```
+
 ### Deleting a network:
 
 ```
