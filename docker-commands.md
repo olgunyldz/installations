@@ -156,3 +156,15 @@ or
 
 docker volume prune --> this command will remove all unattached volumes.
 ```
+
+### Bind mount
+
+### Inspect  docker volume
+
+```
+docker container run -d --nama <NAME> --mount type=bind,source=<SOURCE>,target=<TARGET> <IMAGE>
+
+or
+
+docker container run -d --name <NAME> -v <SOURCE>:<TARGET> <IMAGE>
+```
