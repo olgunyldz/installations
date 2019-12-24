@@ -159,8 +159,6 @@ docker volume prune --> this command will remove all unattached volumes.
 
 ### Bind mount
 
-### Inspect  docker volume
-
 ```
 docker container run -d --nama <NAME> --mount type=bind,source=<SOURCE>,target=<TARGET> <IMAGE>
 
@@ -168,3 +166,31 @@ or
 
 docker container run -d --name <NAME> -v <SOURCE>:<TARGET> <IMAGE>
 ```
+
+# Dockerfile layers
+
+```
+Dockerfile:  
+FROM ubuntu:15.04  
+COPY . /app  
+RUN make /app  
+CMD python /app/app.py
+```
+
+* FROM creates a layer from the ubuntu:15.04 Docker image.
+* COPY adds files from your Docker client’s current directory.
+* RUN builds your application with make.
+* CMD specifies what command to run within the container.
+
+### Best practices
+
+* Keep containers as ephemeral as possible.
+* Follow Principle 6 of the 12 Factor App.
+* Avoid including unnecessary files.
+* Use .dockerignore.
+* Use multi-stage builds.
+* Don’t install unnecessary packages.
+* Decouple applications.
+* Minimize the number of layers.
+* Sort multi-line arguments.
+* Leverage build cache.
