@@ -128,3 +128,31 @@ docker network create --subnet 10.1.0.0/24 --gateway 10.1.0.1 <network name>
 docker network create --subnet 10.1.0.0/16 --gateway 10.1.0.1 --ip-range=10.1.4.0/24 --driver=bridge --label=host4network <network name>
 ```
 
+
+## Storage in Docker
+
+Storage locations: 
+  linux: /var/lib/docker/volumes/
+  windows: c:\ProgramData\Docker\windowsfilter\
+
+### Create docker volume
+
+```
+docker volume create <volume-name>
+```
+
+### Inspect  docker volume
+
+```
+docker volume inspect <volume-name>
+```
+
+### Delete  docker volume
+
+```
+docker volume rm <volume-name>
+
+or
+
+docker volume prune --> this command will remove all unattached volumes.
+```
