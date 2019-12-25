@@ -340,3 +340,18 @@ docker image build -t <NAME>:<TAG> <GIT_URL>#:<DIRECTORY>
 docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>:<DIRECTORY>
 ```
 
+# Save docker images to tar file
+
+```
+docker image save <IMAGE> > <FILE>.tar
+docker image save <IMAGE> -o <FILE>.tar
+docker image save <IMAGE> --output <FILE>.tar
+```
+
+# Load docker images from tar file
+
+```
+docker image load < <FILE>.tar
+docker image load -i <FILE>.tar
+docker image load --input <FILE>.tar
+```
