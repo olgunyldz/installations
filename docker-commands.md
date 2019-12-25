@@ -14,7 +14,7 @@
 * --network string Connect a container to a network (default "default")
 
 
-###Create a container and attach to it:
+### Create a container and attach to it:
 ```
 docker container run –it busybox
 ```
@@ -30,6 +30,13 @@ docker container run –d nginx
 ```
 docker container run –d –name myContainer busybox
 ```
+
+### Remove all docker container
+ 
+ ```
+ docker container rm -f $(docker container ls -q)
+ 
+ ```
 
 ### Exposing:
 
