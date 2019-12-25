@@ -236,7 +236,6 @@ docker image build -t <imagename>:<tag> .
 In docker file env  variable default values has been assigned.
 
 ```
-# Create an image for the weather-app
 FROM node
 LABEL <label>
 ENV NODE_ENV="development"
@@ -255,3 +254,51 @@ If env variables have not been set, then default value sin docker file will be u
 ```
 docker container run -d --name <appname> --env <env_key>:<env_value> <imagename>
 ```
+
+
+# Build arguments
+
+Dockerfile
+
+```
+FROM node
+ARG SRC_DIR=/var/node
+
+RUN mkdir -p $SRC_DIR
+ADD src/ $SRC_DIR
+WORKDIR $SRC_DIR
+RUN npm install
+EXPOSE 3000
+CMD ./bin/www
+
+```
+
+```
+docker image build -t <image-name> --build-arg SRC_DIR=/var/code .
+
+```
+
+# Docker Environment variables
+
+Dockerfile
+
+```
+FROM node
+ENV NODE_ENV="development"
+ENV PORT 3000
+
+RUN mkdir -p /var/node
+ADD src/ /var/node/
+WORKDIR /var/node
+RUN npm install
+EXPOSE $PORT
+CMD ./bin/www
+
+```
+
+```
+docker container run -d --name <containername> -p 8082:3001 -env PORT=3001 <image-name>
+
+
+```
+
