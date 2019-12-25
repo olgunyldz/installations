@@ -233,6 +233,25 @@ docker image build -t <imagename>:<tag> .
 
 ### Environment variables
 
-```
+In docker file env  variable default values has been assigned.
 
+```
+# Create an image for the weather-app
+FROM node
+LABEL <label>
+ENV NODE_ENV="development"
+ENV PORT 3000
+
+RUN mkdir -p /var/node
+ADD src/ /var/node/
+WORKDIR /var/node
+RUN npm install
+EXPOSE $PORT
+CMD ./bin/www
+
+```
+If env variables have not been set, then default value sin docker file will be used.
+
+```
+docker container run -d --name <appname> --env <env_key>:<env_value> <imagename>
 ```
