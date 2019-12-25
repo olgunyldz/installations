@@ -299,6 +299,37 @@ CMD ./bin/www
 ```
 docker container run -d --name <containername> -p 8082:3001 -env PORT=3001 <image-name>
 
+```
 
+# Non-privileged user
+
+Dockerfile
+
+```
+FROM node
+RUN useradd -ms /bin/bash node_user
+USER node_user
+ADD src/ /home/node_user
+WORKDIR /home/node_user
+RUN npm install
+EXPOSE 3000
+CMD ./bin/www
+```
+
+# Volume instruction
+
+Create docker volume in Dockerfile
+
+```
+FROM nginx:latest
+VOLUME ["/usr/share/nginx/html/"]
+```
+
+# Remove Dockerfile build
+
+```
+docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>
+docker image build -t <NAME>:<TAG> <GIT_URL>#:<DIRECTORY>
+docker image build -t <NAME>:<TAG> <GIT_URL>#<REF>:<DIRECTORY>
 ```
 
