@@ -400,6 +400,13 @@ docker system events --since '<TIME-PERIOD>'
 
 # Managing Docker with Portainer
 
+monitoring the docker
 to run portainer:
 
 docker container run -d --name portainer -p 8080:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+
+# Watchtower
+
+keep contaner up-to-date
+
+docker container run -d --name watchtower --restart always -v /var/run/docker.sock:/var/run/docker.sock v2tec/watchtower -i 15
